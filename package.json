@@ -1,0 +1,17 @@
+{
+  "name": "javascript-introduce-lecture",
+  "version": "1.0.0",
+  "description": "입문 강의 소스코드",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server --baseDir='counter'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjkandrea/javascript-introduce-lecture.git"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.15"
+  }
+}
