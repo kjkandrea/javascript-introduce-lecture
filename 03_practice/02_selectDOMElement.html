@@ -1,0 +1,24 @@
+<html>
+<body>
+count : <span id="count">0</span>
+<script>
+    /**
+     * document 는 하위 메서드로 Element 객체를 검색 할 수 있는 여러 종류의 메서드를 제공한다.
+     * 그 중 Document.getElementById 는 문서내에 선언된 단 하나의 ID 를 지닌 Element 를 리턴한다.
+     *
+     * id 는 유니크한 값이기에 id와 Element 는 1:1 로 맵핑되어있다.
+     * 따라서 Document Object Model 에서의 id를 통한 검색은 O(1) 으로 Element 를 선택 할 수 있기에 Element 선택에 있어 가장 유리하다.
+     */
+
+
+    console.log(
+    document.getElementById('count') // <span id="count">0</span>
+    ,document.getElementById('count').textContent // '0'
+    )
+
+    const countElement = document.getElementById('count')
+    const count = Number(countElement.textContent)
+    countElement.innerText = String(count + 1) // 문서내에 count : 1 이 표기됨
+</script>
+</body>
+</html>

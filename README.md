@@ -485,17 +485,17 @@ map 은 첫번째 인자로 받은 함수를 실행하며 값을 맵핑한 결�
 ``` javascript
 const ages = [26, 29, 30, 28, 35]
 
-ages.map(age => age += 1)// [27, 30, 31, 29, 36]
+ages.map(age => age + 1)// [27, 30, 31, 29, 36]
 ```
 
 #### Array.prototype.filter
 
 filter 는 첫번째 인자로 받은 함수를 실행하여 각 값을 평가하며, true 가 리턴된 결과를 반환한다.
 
-```
+``` javascript
 const ages = [26, 29, 30, 28, 35]
 
-ages.filter(age => age > 30)// [29, 30, 35]
+ages.filter(age => age >= 30)// [30, 35]
 ```
 
 # 실무에서의 javascript
@@ -537,20 +537,77 @@ document.getElementById('count').textContent // '0'
 
 const countElement = document.getElementById('count')
 const count = Number(countElement.textContent)
-countElement.innerText = count + 1 // 문서내에 count : 1 이 표기됨
+countElement.innerText = String(count + 1) // 문서내에 count : 1 이 표기됨
 ```
 
 ## ESModule
 
-jvascript 의 모듈 시스템에 대하여 알아보자.
+개발하는 어플리케이션의 크기가 커지면 언젠간 파일을 여러 개로 분리해야 하는 시점이 온다.
+lodash 와 같은 외부 종속성의 모듈을 사용하고자 할때도 import, export 키워드의 사용은 필수적이다.
 
-블라블라
+모듈을 추가하고, 추가된 모듈을 사용하는 방법에 대해 간단히 알아보자.
+
+### module 생성하기
+
+별도의 javascript 파일을 구성하고 `export` 키워드를 이용하여 파일시스템에 모듈을 공개할 수 있다.
+
+``` javascript
+// modules.js
+export function sum(a, b) {
+  return a + b
+}
+
+export function pow(a, b) {
+  return a * b
+}
+```
+
+### module 사용하기
+
+파일시스템에 공개된 모듈은 `import` 키워드를 통해 원하는 곳에서 사용할 수 있다.
+
+``` javascript
+import { sum, pow } from './modules.js'
+
+sum(2, 3) // 5
+pow(3, 4) // 12
+``` 
+
+lodash 와 같은 외부 모듈은 설치 후 다음과 같이 사용할 수 있다.
+
+``` javascript
+const andrea = {
+  name: 'andrea',
+  age: 31,
+  job: 'fe developer'
+}
+
+import omit from 'lodash.omit'
+
+omit(andrea, ['age']) // { name: 'andrea', job: 'fe developer' }
+```
+ 
 
 [같이보면 좋은 자료 : JavaScript modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)
 
-## MVC 로 카운터 어플리케이션 만들기
+## MVC 패턴으로 카운터 어플리케이션 만들기
 
-블라블라
+여태까지 학습했던 내용을 바탕으로 간단한 카운터 어플리케이션을 만들어보자.
+
+요구사항은 다음과 같다.
+
+```
+[+] 0 [-]
+```
+
+* 카운터는 0 부터 시작한다.
+* [+] 버튼을 동작 하면 카운트는 1 이 증가한다.
+* [-] 버튼을 동작 하면 카운트는 1 이 감소한다.
+* 카운트는 0 이하로는 떨어지지 않는다.
+
+### MVC
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gIGRpcmVjdGlvbiBCVFxuICBjbGFzcyBDb250cm9sbGVyXG4gIGNsYXNzIFZpZXdcbiAgY2xhc3MgTW9kZWxcbiAgTW9kZWwgLS1vIENvbnRyb2xsZXIgOiBkYXRhXG4gIENvbnRyb2xsZXIgLS1vIE1vZGVsIDogdXBkYXRlXG4gIFZpZXcgLS1vIENvbnRyb2xsZXIgOiBldmVudFxuICBDb250cm9sbGVyIC0tbyBWaWV3IDogdXBkYXRlXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)](https://mermaid.live/edit#eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gIGRpcmVjdGlvbiBCVFxuICBjbGFzcyBDb250cm9sbGVyXG4gIGNsYXNzIFZpZXdcbiAgY2xhc3MgTW9kZWxcbiAgTW9kZWwgLS1vIENvbnRyb2xsZXIgOiBkYXRhXG4gIENvbnRyb2xsZXIgLS1vIE1vZGVsIDogdXBkYXRlXG4gIFZpZXcgLS1vIENvbnRyb2xsZXIgOiBldmVudFxuICBDb250cm9sbGVyIC0tbyBWaWV3IDogdXBkYXRlXG4iLCJtZXJtYWlkIjoie1xuICBcInRoZW1lXCI6IFwiZGVmYXVsdFwiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
 
 ## 참고 문서
 
@@ -558,4 +615,3 @@ jvascript 의 모듈 시스템에 대하여 알아보자.
 
 * [MDN : 모질라 재단 javascript docs](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 * [자바스크립트 완벽가이드 : 데이비트 플레너건 지음](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966261796)
-* [기존교육자료 : JavaScript 기초 교육자료](https://nhnent.dooray.com/project/posts/3178911366042570807)
