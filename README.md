@@ -542,9 +542,51 @@ countElement.innerText = String(count + 1) // 문서내에 count : 1 이 표기�
 
 ## ESModule
 
-jvascript 의 모듈 시스템에 대하여 알아보자.
+개발하는 어플리케이션의 크기가 커지면 언젠간 파일을 여러 개로 분리해야 하는 시점이 온다.
+lodash 와 같은 외부 종속성의 모듈을 사용하고자 할때도 import, export 키워드의 사용은 필수적이다.
 
-블라블라
+모듈을 추가하고, 추가된 모듈을 사용하는 방법에 대해 간단히 알아보자.
+
+### module 생성하기
+
+별도의 javascript 파일을 구성하고 `export` 키워드를 이용하여 파일시스템에 모듈을 공개할 수 있다.
+
+``` javascript
+// modules.js
+export function sum(a, b) {
+  return a + b
+}
+
+export function pow(a, b) {
+  return a * b
+}
+```
+
+### module 사용하기
+
+파일시스템에 공개된 모듈은 `import` 키워드를 통해 원하는 곳에서 사용할 수 있다.
+
+``` javascript
+import { sum, pow } from './modules.js'
+
+sum(2, 3) // 5
+pow(3, 4) // 12
+``` 
+
+lodash 와 같은 외부 모듈은 설치 후 다음과 같이 사용할 수 있다.
+
+``` javascript
+const andrea = {
+  name: 'andrea',
+  age: 31,
+  job: 'fe developer'
+}
+
+import omit from 'lodash.omit'
+
+omit(andrea, ['age']) // { name: 'andrea', job: 'fe developer' }
+```
+ 
 
 [같이보면 좋은 자료 : JavaScript modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)
 

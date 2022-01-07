@@ -14,5 +14,8 @@
   "devDependencies": {
     "lite-server": "^2.6.1",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "lodash.omit": "^4.5.0"
   }
 }
