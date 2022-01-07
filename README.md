@@ -558,4 +558,3 @@ jvascript 의 모듈 시스템에 대하여 알아보자.
 
 * [MDN : 모질라 재단 javascript docs](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 * [자바스크립트 완벽가이드 : 데이비트 플레너건 지음](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966261796)
-* [기존교육자료 : JavaScript 기초 교육자료](https://nhnent.dooray.com/project/posts/3178911366042570807)
