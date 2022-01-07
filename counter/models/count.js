@@ -1,4 +1,4 @@
-import Subject from './observable/Subject.js'
+import Subject from '../observable/Subject.js'
 
 export default {
   count: new Subject(0),

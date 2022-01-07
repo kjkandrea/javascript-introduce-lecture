@@ -1,3 +1,3 @@
-import controller from './controller.js'
+import controller from './controllers/countController.js'
 
 document.addEventListener('DOMContentLoaded', () => controller.init())

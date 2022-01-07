@@ -1,5 +1,5 @@
-import view from './view.js'
-import model from './model.js'
+import view from '../views/counter.js'
+import model from '../models/count.js'
 
 export default {
   init() {
