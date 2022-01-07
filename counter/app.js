@@ -1,1 +1,3 @@
-console.log('hello, javascript!')
+import view from './view.js'
+
+document.addEventListener('DOMContentLoaded', () => view.init())
