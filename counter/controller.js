@@ -3,14 +3,10 @@ import model from './model.js'
 
 export default {
   init() {
+    model.count.subscribe(view.render)
+
     view.init(model.count.value)
-      .on('@increment', () => {
-        model.increment()
-        view.render(model.count.value)
-      })
-      .on('@decrement', () => {
-        model.decrement()
-        view.render(model.count.value)
-      })
+      .on('@increment', () => model.increment())
+      .on('@decrement', () => model.decrement())
   }
 }

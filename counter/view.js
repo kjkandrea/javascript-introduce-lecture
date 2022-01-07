@@ -1,8 +1,5 @@
 export default {
   init(count) {
-    this.countElement = document.getElementById('count')
-    this.incrementButtonElement = document.getElementById('increment')
-    this.decrementButtonElement = document.getElementById('decrement')
     this._events = {}
 
     this.render(count)
@@ -11,11 +8,13 @@ export default {
     return this;
   },
   render(count) {
-    this.countElement.value = count;
+    document.getElementById('count').value = count;
   },
   attachEvents() {
-    this.incrementButtonElement.addEventListener('click', () => this.emit('@increment'))
-    this.decrementButtonElement.addEventListener('click', () => this.emit('@decrement'))
+    document.getElementById('increment')
+      .addEventListener('click', () => this.emit('@increment'))
+    document.getElementById('decrement')
+      .addEventListener('click', () => this.emit('@decrement'))
   },
   on (eventName, callback) {
     this._events[eventName] = callback
