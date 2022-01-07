@@ -5,12 +5,12 @@ export default {
     this.decrementButtonElement = document.getElementById('decrement')
 
     this.render(count)
-    this.attachEvent();
+    this.attachEvents();
   },
   render(count) {
     this.countElement.value = count;
   },
-  attachEvent() {
+  attachEvents() {
     this.incrementButtonElement.addEventListener('click', () => console.log('increment'))
     this.decrementButtonElement.addEventListener('click', () => console.log('decrement'))
   }
