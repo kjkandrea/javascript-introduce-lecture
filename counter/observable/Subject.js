@@ -1,7 +1,7 @@
 export default class Subject {
   constructor (value) {
-    this.next(value)
     this.subscribers = [];
+    this.next(value)
   }
   get value() {
     return this._value;
