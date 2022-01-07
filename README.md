@@ -537,7 +537,7 @@ document.getElementById('count').textContent // '0'
 
 const countElement = document.getElementById('count')
 const count = Number(countElement.textContent)
-countElement.innerText = count + 1 // 문서내에 count : 1 이 표기됨
+countElement.innerText = String(count + 1) // 문서내에 count : 1 이 표기됨
 ```
 
 ## ESModule
