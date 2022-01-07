@@ -4,7 +4,7 @@
   "description": "입문 강의 소스코드",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server --baseDir='counter'"
+    "start": "lite-server --baseDir='03_practice/counter'"
   },
   "repository": {
     "type": "git",
