@@ -7,6 +7,8 @@ export default {
 
     this.render(count)
     this.attachEvents();
+
+    return this;
   },
   render(count) {
     this.countElement.value = count;
