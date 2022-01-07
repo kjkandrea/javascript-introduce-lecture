@@ -1,4 +1,4 @@
-const count = {
+export default {
   count: 0,
 
   increment() {
@@ -10,15 +10,3 @@ const count = {
     this.count--
   }
 }
-
-console.log(count.count)
-count.increment()
-count.increment()
-count.increment()
-console.log(count.count)
-count.decrement()
-console.log(count.count)
-count.decrement()
-count.decrement()
-count.decrement()
-console.log(count.count)
