@@ -492,7 +492,7 @@ ages.map(age => age + 1)// [27, 30, 31, 29, 36]
 
 filter 는 첫번째 인자로 받은 함수를 실행하여 각 값을 평가하며, true 가 리턴된 결과를 반환한다.
 
-```
+``` javascript
 const ages = [26, 29, 30, 28, 35]
 
 ages.filter(age => age >= 30)// [30, 35]
