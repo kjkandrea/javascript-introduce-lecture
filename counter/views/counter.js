@@ -1,27 +1,23 @@
-export default {
-  init(count) {
-    this._events = {}
+import View from './View.js'
 
-    this.render(count)
-    this.attachEvents();
-
-    return this;
-  },
-  render(count) {
-    document.getElementById('count').value = count;
-  },
-  attachEvents() {
-    document.getElementById('increment')
-      .addEventListener('click', () => this.emit('@increment'))
-    document.getElementById('decrement')
-      .addEventListener('click', () => this.emit('@decrement'))
-  },
-  on (eventName, callback) {
-    this._events[eventName] = callback
+class Counter extends View {
+  init (count) {
+    this.update(count)
+    this.attachEvents()
 
     return this
-  },
-  emit (eventName) {
-    this._events[eventName]?.()
+  }
+
+  update (count) {
+    document.getElementById('count').value = count
+  }
+
+  attachEvents () {
+    document.getElementById('increment').
+      addEventListener('click', () => this.emit('@increment'))
+    document.getElementById('decrement').
+      addEventListener('click', () => this.emit('@decrement'))
   }
 }
+
+export default new Counter();
