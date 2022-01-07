@@ -590,9 +590,24 @@ omit(andrea, ['age']) // { name: 'andrea', job: 'fe developer' }
 
 [같이보면 좋은 자료 : JavaScript modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)
 
-## MVC 로 카운터 어플리케이션 만들기
+## MVC 패턴으로 카운터 어플리케이션 만들기
 
-블라블라
+여태까지 학습했던 내용을 바탕으로 간단한 카운터 어플리케이션을 만들어보자.
+
+요구사항은 다음과 같다.
+
+```
+[+] 0 [-]
+```
+
+* 카운터는 0 부터 시작한다.
+* [+] 버튼을 동작 하면 카운트는 1 이 증가한다.
+* [-] 버튼을 동작 하면 카운트는 1 이 감소한다.
+* 카운트는 0 이하로는 떨어지지 않는다.
+
+### MVC
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gIGRpcmVjdGlvbiBCVFxuICBjbGFzcyBDb250cm9sbGVyXG4gIGNsYXNzIFZpZXdcbiAgY2xhc3MgTW9kZWxcbiAgTW9kZWwgLS1vIENvbnRyb2xsZXIgOiBkYXRhXG4gIENvbnRyb2xsZXIgLS1vIE1vZGVsIDogdXBkYXRlXG4gIFZpZXcgLS1vIENvbnRyb2xsZXIgOiBldmVudFxuICBDb250cm9sbGVyIC0tbyBWaWV3IDogdXBkYXRlXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)](https://mermaid.live/edit#eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gIGRpcmVjdGlvbiBCVFxuICBjbGFzcyBDb250cm9sbGVyXG4gIGNsYXNzIFZpZXdcbiAgY2xhc3MgTW9kZWxcbiAgTW9kZWwgLS1vIENvbnRyb2xsZXIgOiBkYXRhXG4gIENvbnRyb2xsZXIgLS1vIE1vZGVsIDogdXBkYXRlXG4gIFZpZXcgLS1vIENvbnRyb2xsZXIgOiBldmVudFxuICBDb250cm9sbGVyIC0tbyBWaWV3IDogdXBkYXRlXG4iLCJtZXJtYWlkIjoie1xuICBcInRoZW1lXCI6IFwiZGVmYXVsdFwiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
 
 ## 참고 문서
 
